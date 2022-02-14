@@ -10,7 +10,7 @@ UNDEFINED_SINGS = {
   "\u00A2" => "\x81\x91".force_encoding(Encoding::CP932), # ¢ CENT SIGN
   "\u00A3" => "\x81\x92".force_encoding(Encoding::CP932), # £ POUND SIGN
   "\u00AC" => "\x81\xCA".force_encoding(Encoding::CP932), # ¬ NOT SIGN
-}
+}.freeze
 
 def export_csv(items)
   file = CSV.open(EXPORT_FILENAME, "w", encoding: "CP932")
@@ -21,7 +21,7 @@ def export_csv(items)
       item[:date],
       item[:price],
       0,
-      item[:tekiyou].encode(Encoding::Windows_31J, fallback: UNDEFINED_SINGS),
+      item[:tekiyou].encode(Encoding::CP932, fallback: UNDEFINED_SINGS),
       "",
     ]
     file.puts(file_item)
