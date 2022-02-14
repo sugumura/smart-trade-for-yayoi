@@ -3,11 +3,11 @@
 クレジットカードのCSVデータを弥生のスマート取引で扱えるように変換するスクリプト。
 日付が入っていない行はスキップするので割引などは出力に入らない可能性があることに注意してください(ＷＥＢ明細書年会費割引など)
 
-vpassのCSVファイルのみ対応しています
+vpassと三菱UFJ銀行のCSVファイルのみ対応しています
 
 ## How to use
 
-dataフォルダにvpassからダウンロードしたcsvファイルを配置する
+dataフォルダにcsvファイルを配置する
 
 ```
 # 例
@@ -19,7 +19,13 @@ data/20220202.csv
 rubyスクリプトを実行する
 
 ```
-$ ruby convert.rb
+# vpass
+$ ruby convert.rb vpass
+# output to out/export.csv
+
+
+# 三菱東京UFJ
+$ ruby convert.rb mufg
 # output to out/export.csv
 ```
 
