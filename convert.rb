@@ -1,7 +1,8 @@
 require "optparse"
 
-require "./functions/vpass.rb"
+require_relative "./functions/vpass.rb"
 require_relative "./functions/mufg.rb"
+require_relative "./functions/suica.rb"
 
 EXPORT_FILENAME = "out/export.csv"
 
@@ -14,6 +15,8 @@ def main
     clazz = Functions::Vpass
   elsif argv == ["mufg"]
     clazz = Functions::Mufg
+  elsif argv == ["suica"]
+    clazz = Functions::Suica
   else
     return
   end

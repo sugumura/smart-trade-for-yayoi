@@ -15,6 +15,13 @@ def date_format?(date)
   "#{date}".match(/\A[0-9]{4}\/\d{1,2}\/\d{1,2}\z/)
 end
 
+# 2021年01月01日, 2021年1月日のような日付判定
+# @param [String] date
+# @return [Boolean]
+def kanji_date_format?(date)
+  "#{date}".match(/\A[0-9]{4}年\d{1,2}月\d{1,2}日\z/)
+end
+
 def cp932_fallback
   UNDEFINED_SINGS
 end

@@ -27,7 +27,23 @@ $ ruby convert.rb vpass
 # 三菱東京UFJ
 $ ruby convert.rb mufg
 # output to out/export.csv
+
+# suica (Suica Reader)
+$ ruby convert.rb suica
+# output to out/export.csv
 ```
+
+## Suica (Suica Reader)
+
+AndroidのSuica ReaderのCSV
+https://play.google.com/store/apps/details?id=yanzm.products.suicareader&hl=en_US&gl=US
+
+設定で以下を行う
+
+|key|value|
+|---|-----|
+|CSVファイルの文字コード |Shift_JIS |
+|チャージと支払を別の列にする |✅ |
 
 ## スマート取引の設定
 
