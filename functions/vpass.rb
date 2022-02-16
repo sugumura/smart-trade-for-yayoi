@@ -8,6 +8,10 @@ module Functions
   class Vpass
     EXPORT_HEADERS = ["利用日", "購入額", "返金額", "摘要", "部門"].freeze
 
+    def encoding
+      "CP932:UTF-8"
+    end
+
     def export(path, items, encoding: "CP932")
       file = CSV.open(path, "w", encoding: encoding)
       file.puts EXPORT_HEADERS

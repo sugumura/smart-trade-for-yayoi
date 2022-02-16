@@ -29,7 +29,7 @@ def main
     p filename
     index = 0
     items = []
-    CSV.foreach(filename, encoding: "CP932:UTF-8") do |row|
+    CSV.foreach(filename, encoding: clazz.encoding) do |row|
       # 行に対する処理
       convert_row = clazz.convert(index, row)
       index = index + 1

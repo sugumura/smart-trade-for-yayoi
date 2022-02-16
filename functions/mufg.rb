@@ -8,6 +8,10 @@ module Functions
   class Mufg
     EXPORT_HEADERS = ["日付", "支払い金", "預かり金", "摘要"].freeze
 
+    def encoding
+      "CP932:UTF-8"
+    end
+
     def export(path, items, encoding: "CP932")
       file = CSV.open(path, "w", encoding: encoding)
       file.puts EXPORT_HEADERS
